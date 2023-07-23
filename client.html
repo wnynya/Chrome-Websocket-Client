@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="client.css" type="text/css" rel="stylesheet" />
+    <title>Websocket Client</title>
+  </head>
+
+  <body theme="light" prefer="auto">
+    <header id="header">
+      <div class="left">
+        <h1>Websocket Client</h1>
+        <h1 class="slash">/</h1>
+        <input id="client-name" type="text" placeholder="Client Name" />
+      </div>
+      <div class="right">
+        <button id="button-change-theme">Theme: Auto</button>
+      </div>
+    </header>
+
+    <main id="main">
+      <aside id="sessions">
+        <div class="list" id="sessions-list"></div>
+        <div class="button">
+          <button id="button-new-client">New client</button>
+        </div>
+      </aside>
+
+      <section id="client">
+        <div id="client-wrapper" class="wrapper"></div>
+      </section>
+    </main>
+
+    <template id="client-template">
+      <div class="host">
+        <label>
+          <span>Host Connection</span>
+          <span class="status" status="closed">CLOSED</span>
+        </label>
+        <div class="url">
+          <input
+            class="input-url"
+            type="text"
+            placeholder="wss://example.com"
+            spellcheck="false"
+            value="wss://lab-api.wany.io/amuject/echo"
+          />
+          <button class="button-url">Open</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="left">
+          <div class="send">
+            <div class="title">
+              <label>Send</label>
+              <button class="button-send">Send</button>
+            </div>
+            <textarea
+              class="textarea-send"
+              placeholder="Data for send"
+              spellcheck="false"
+            ></textarea>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="options"></div>
+        </div>
+
+        <div class="vr"></div>
+
+        <div class="right">
+          <div class="logs">
+            <div class="title">
+              <label>Logs</label>
+              <button class="button-logs-clear">Clear logs</button>
+            </div>
+            <div class="logs-display"></div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script src="client.js"></script>
+  </body>
+</html>
